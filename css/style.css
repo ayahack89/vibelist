@@ -87,7 +87,9 @@ a ion-icon {
   padding-bottom: 8px;
 }
 
-@media only screen and (max-width: 1615px) {
+/* Laotop - Ipad respnsiveness */
+/* Mobile Responsiveness */
+@media only screen and (max-width: 1000px) {
   .navv {
     width: 100vw;
     height: 10vh;
