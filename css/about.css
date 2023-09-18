@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Roboto&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(46, 45, 45);
+  color: aliceblue;
+}
+.nav {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  font-size: 2.2rem;
+  color: white;
+  /* background-color: rgb(201, 8, 8); */
+  padding: 5px;
+  font-family: "Annie Use Your Telescope", cursive;
+}
+.backgroundd {
+  background: rgba(9, 9, 9, 0.598)
+    url("../img/pexels-felix-mittermeier-956999.jpg");
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main {
+  padding: 10%;
+  padding-top: 12%;
+}
+.main p {
+  font-size: 2rem;
+  font-family: "Annie Use Your Telescope", cursive;
+}
+.foter {
+  /* background-color: rgb(201, 8, 8); */
+  /* width: 1658px; */
+  padding: 25px;
+  font-weight: lighter;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  font-family: "Annie Use Your Telescope", cursive;
+}
+.fotericon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a ion-icon {
+  margin-top: 10px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  color: aliceblue;
+}
+.insta:hover {
+  padding-bottom: 8px;
+}
+.twitt:hover {
+  padding-bottom: 8px;
+}
+.git:hover {
+  padding-bottom: 8px;
+}
+.You:hover {
+  padding-bottom: 8px;
+}
+.link:hover {
+  padding-bottom: 8px;
+}
+
+@media only screen and (max-width: 1615px) {
+  .main {
+    padding-top: 45%;
+  }
+}
