@@ -121,7 +121,7 @@ a ion-icon {
 .You:hover {
   padding-bottom: 8px;
 }
-@media only screen and (max-width: 1615px) {
+@media only screen and (max-width: 1000px) {
   .navv ul {
     list-style-type: none;
     padding-right: 15%;
