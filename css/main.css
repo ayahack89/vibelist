@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(46, 45, 45);
+  font-family: "Poppins", sans-serif;
+  background-color: #0e1525;
   box-sizing: border-box;
 }
 
@@ -12,15 +13,15 @@ header {
   top: 0;
   z-index: 1000;
   padding: 10px;
-  background-color: rgb(201, 8, 8);
+  background-color: #0e1525;
 }
 .tooltip {
   position: relative;
   display: inline-block;
 }
 .tooltip .tooltipText {
-  background-color: rgb(32, 31, 31);
-  color: white;
+  background-color: white;
+  color: black;
   visibility: hidden;
   width: 120px;
   text-align: center;
@@ -50,7 +51,14 @@ a .navIcons {
   height: 30px;
   padding: 5px;
 }
-.video {
+
+img {
+  width: 28vw;
+  height: 55vh;
+  border: none;
+  border-radius: 20px;
+}
+.audio {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,17 +67,25 @@ a .navIcons {
   width: 850px;
   height: 550px;
 } */
+
+audio {
+  width: 500px;
+  height: 50px;
+}
 .desc {
   margin-left: 8%;
 }
 .text-big {
   font-size: 2rem;
   color: white;
+  /* padding-left: 22%;
+  padding-right: 37%; */
 }
 .text-small {
   font-size: 1.3rem;
   color: white;
-  padding-right: 20px;
+  /* padding-left: 22%;
+  padding-right: 37%; */
 }
 .boxCenter {
   display: flex;
@@ -79,17 +95,17 @@ a .navIcons {
 .boxMargin {
   padding-top: 7%;
 }
-.videoBox {
+.audioBox {
   border: none;
-  border-radius: 10px;
-  width: 65%;
+  border-radius: 30px;
+  width: 30%;
   padding: 50px;
-  background-color: rgb(81, 80, 80);
+  background-color: #191e29;
   margin-top: 170px;
   margin: 50px;
 }
 .foter {
-  background-color: rgb(201, 8, 8);
+  background-color: #0e1525;
   /* width: 1658px; */
   padding: 25px;
   font-weight: lighter;
@@ -132,22 +148,28 @@ a ion-icon {
     height: 30px;
     padding-right: 10px;
   }
+  img {
+    width: 300px;
+    height: 300px;
+    border: none;
+    border-radius: 20px;
+  }
 
-  video[poster] {
-    width: 100%;
-    height: 100%;
+  audio {
+    width: 300px;
+    height: 50px;
   }
   .boxMargin {
     padding-top: 38%;
   }
 
-  .videoBox {
+  .audioBox {
     border: none;
-    border-radius: 10px;
+    border-radius: 30px;
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    background-color: rgb(81, 80, 80);
+    background-color: #191e29;
   }
   .text-big {
     font-size: 1.5rem;

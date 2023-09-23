@@ -1,136 +1,75 @@
-@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(46, 45, 45);
-}
-.navv {
-  background-color: rgb(201, 8, 8);
-  /* width: 1658px; */
-  width: 100%;
-  padding: 15px;
-  position: fixed;
-  font-weight: bolder;
-  font-size: 2.2rem;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #0e1525;
   color: white;
-  text-align: center;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
-.main {
-  padding-top: 10%;
-  padding-left: 10%;
-  padding-bottom: 5%;
-}
-.text-big {
-  font-size: 2.5rem;
-  color: red;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-.text-small {
-  font-size: 1.6rem;
-  color: white;
-  font-family: "Annie Use Your Telescope", cursive;
-}
-a .expbtn {
-  background-color: transparent;
-  padding: 15px;
-  width: 10%;
-  border: 2px solid red;
-  border-radius: 8px;
-  color: red;
-  font-size: 1rem;
-  font-weight: bolder;
-  margin-top: 20px;
-}
-a .expbtn:hover {
-  background-color: red;
-  color: white;
-  cursor: pointer;
-}
-
-.image .myimage {
-  width: 20%;
-  border: none;
-  border-radius: 20px;
-}
-.foter {
-  background-color: rgb(201, 8, 8);
-  /* width: 1658px; */
-  padding: 25px;
-  font-weight: lighter;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-}
-.fotericon {
+section {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 50px;
+  padding-right: 10%;
 }
-a ion-icon {
-  margin-top: 10px;
-  padding: 5px;
-  width: 30px;
-  height: 30px;
-  color: aliceblue;
+h2 {
+  font-size: 5rem;
 }
-.insta:hover {
-  padding-bottom: 8px;
+p {
+  font-size: 2rem;
 }
-.twitt:hover {
-  padding-bottom: 8px;
+.main a button {
+  background-color: white;
+  border: none;
+  border-radius: 35px;
+  padding: 20px;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  width: 20%;
+  transition: all 4ms ease-in;
 }
-.git:hover {
-  padding-bottom: 8px;
-}
+.main a button:hover {
+  background-color: rgba(255, 255, 255, 0.847);
 
-/* Laotop - Ipad respnsiveness */
-/* Mobile Responsiveness */
+  color: black;
+  cursor: pointer;
+  transform: translateY(-2%);
+}
 @media only screen and (max-width: 1000px) {
-  .navv {
-    width: 100vw;
-    height: 10vh;
-    font-size: 4.4vw;
+  section {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    padding-right: 5%;
+    padding-left: 5%;
   }
-  h1 {
-    padding-right: 10%;
+  h2 {
+    font-size: 2.8rem;
   }
-  .main {
-    padding-top: 30%;
-    padding-left: 10%;
-    padding-bottom: 5%;
-  }
-  .image .myimage {
-    width: 60vw;
-    border: none;
-    border-radius: 20px;
-  }
-  a .expbtn {
-    background-color: transparent;
-    padding: 15px;
-    width: 50vw;
-    border: 2px solid red;
-    border-radius: 8px;
-    color: red;
-    font-size: 1.3rem;
-    font-weight: bolder;
-    margin-top: 20px;
-  }
-  .text-big {
-    font-size: 1.8rem;
-    color: red;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-      sans-serif;
-    padding-right: 10%;
-  }
-  .text-small {
+  p {
     font-size: 1.2rem;
-    padding-right: 10%;
-    color: white;
-    font-family: "Annie Use Your Telescope", cursive;
+  }
+  .main a button {
+    background-color: white;
+    border: none;
+    border-radius: 35px;
+    padding: 20px;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    width: 90%;
+    transition: all 4ms ease-in;
+  }
+  .main a button:hover {
+    background-color: rgba(255, 255, 255, 0.847);
+
+    color: black;
+    cursor: pointer;
+    transform: translateY(-2%);
   }
 }
