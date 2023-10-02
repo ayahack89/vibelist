@@ -52,17 +52,17 @@ p {
     font-size: 2.8rem;
   }
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .main a button {
     background-color: white;
     border: none;
     border-radius: 35px;
-    padding: 20px;
+    padding: 12px;
     color: black;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bolder;
-    width: 90%;
+    width: 65%;
     transition: all 4ms ease-in;
   }
   .main a button:hover {
