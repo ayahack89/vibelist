@@ -48,6 +48,7 @@ h1 {
   font-weight: 700;
   color: var(--accent-color);
   letter-spacing: -0.5px;
+  color: #6a7bff;
 }
 
 h1 i {
@@ -93,13 +94,11 @@ main {
   font-size: 1.3rem;
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .explore-btn:hover {
   background-color: var(--button-hover);
-  transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 

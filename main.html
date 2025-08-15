@@ -1,255 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vibelist - My Personal Music Collection</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Vibelist - Work with a vibe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap">
-  <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+
+
 </head>
+
 <body>
-  <div class="container">
+
+  <div class="wrap">
     <header>
       <div class="header-content">
         <div class="logo">
           <i class="ri-music-ai-line"></i>
           <span>Vibelist</span>
         </div>
+        <div class="controls">
+          <div class="search" title="Search songs or artists (iTunes)">
+            <i class="ri-search-line"></i>
+            <input id="searchBox" style='font-family: "Libertinus Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;' placeholder="Search songs, artists (press Enter)" />
+          </div>
+        </div>
         <nav class="navv">
           <ul>
             <li>
               <div class="tooltip">
-                <a href="index.html">
-                 <i class="ri-home-9-line"></i>
-                </a>
+                <a href="#" id="homeBtn"><i class="ri-home-5-line"></i></a>
                 <div class="tooltipText">Home</div>
               </div>
             </li>
             <li>
               <div class="tooltip">
-                <a href="https://open.spotify.com/">
-                  <i class="ri-spotify-line"></i>
-                </a>
+                <a href="https://open.spotify.com" target="_blank"><i class="ri-spotify-line"></i></a>
                 <div class="tooltipText">Spotify</div>
               </div>
             </li>
-              <li>
+            <li>
               <div class="tooltip">
-                <a href="#" target="_blank">
-                  <i class="ri-twitter-x-fill"></i>
-                </a>
+                <a href="https://x.com/ayanabha08" target="_blank"><i class="ri-twitter-x-fill"></i></a>
                 <div class="tooltipText">X (Formaly twitter)</div>
               </div>
             </li>
             <li>
-            <li>
               <div class="tooltip">
-                <a href="https://www.linkedin.com/in/ayanabha-chatterjee-104979256/" target="_blank">
-                 <i class="ri-linkedin-box-line"></i>
-                </a>
-                <div class="tooltipText">LinkedIn</div>
-              </div>
-            </li>
-            <li>
-              <div class="tooltip">
-                <a href="https://www.github.com/ayahack89" target="_blank">
-                <i class="ri-github-line"></i>
-                </a>
+                <a href="https://www.github.com" target="_blank"><i class="ri-github-line"></i></a>
                 <div class="tooltipText">Github</div>
               </div>
             </li>
             <li>
               <div class="tooltip">
-                <a href="about.html">
-                <i class="ri-attachment-2"></i>
-                </a>
-                <div class="tooltipText">About Me</div>
+                <a href="about.html" target="_blank"><i class="ri-attachment-line"></i></a>
+                <div class="tooltipText">About</div>
               </div>
             </li>
           </ul>
         </nav>
       </div>
     </header>
-    
+
     <main>
-      <h1 class="page-title">My Personal Music Collection</h1>
-      
-      <div class="search-bar">
-        <i class="ri-search-line"></i>
-        <input type="text" id="searchInput" placeholder="Search for songs, artists...">
+      <div class="grid" id="playlists">
       </div>
-      
-      <div class="music-grid" id="musicGrid">
-        <!-- Songs will be dynamically added here -->
+      <div
+        style="margin-top:24px; text-align:center; padding: 20px; background: var(--card); border-radius: 12px; border: 1px solid var(--border-color);">
+        <h2 style="margin-top:0;">What you need to know</h2>
+        <p style="font-size:14px; color: var(--muted); max-width: 600px; margin: 0 auto;">This app uses public music
+          APIs for metadata and short preview streams (≈30s). For full commercial streaming, licensed providers are
+          required.</p>
       </div>
     </main>
-    
-    <footer>
-      <div class="footer-content">
-        <p>Connect with me</p>
-        <div class="social-icons">
-          <a href="https://instagram.com/a_vengeanc.e/" target="_blank">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a>
-          <a href="https://twitter.com/ayanabhach08" target="_blank">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
-          <a href="https://github.com/aYgCOO" target="_blank">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-          <a href="https://www.youtube.com/channel/UCfVk9QwieYqG6X-TdqLetLQ" target="_blank">
-            <ion-icon name="logo-youtube"></ion-icon>
-          </a>
-        </div>
-        <div class="copyright">
-          &copy; 2023 Vibelist. Made with <i class="ri-heart-3-fill" style="color: #ff6b6b;"></i> and good vibes
+  </div>
+
+  <footer id="player-footer" style="display:none">
+    <div class="now-playing-bar" id="nowPlaying">
+      <div class="track-info">
+        <img id="nowCover" alt="album cover" />
+        <div>
+          <div id="nowTitle"></div>
+          <div id="nowArtist"></div>
         </div>
       </div>
-    </footer>
-  </div>
+      <audio id="player" controls></audio>
+    </div>
+  </footer>
+
   <script>
-    const songs = [
-      {
-        id: 1,
-        title: "METAMORPHOSIS Mp3🎧",
-        artist: "INTERWORLD · IVAN BELOZEROV",
-        image: "https://i.pinimg.com/564x/d8/d6/fa/d8d6fa9287f459cbf70bee4f247f663b.jpg",
-        audio: "music/Metamorphosis(PagalWorld.Social).mp3",
-        description: "METAMORPHOSIS · INTERWORLD · IVAN BELOZEROV METAMORPHOSIS ℗ 2021 Black 17 Media, LLC. Released on: 2021-11-25 Producer: INTERWORLD Auto-generated by YouTube."
-      },
-      {
-        id: 2,
-        title: "INTERWORLD - RAPTURE (PHONK) Mp3🎧",
-        artist: "INTERWORLD",
-        image: "https://i.pinimg.com/564x/2a/7f/df/2a7fdf566753548414ed6c523fd3a5a9.jpg",
-        audio: "music/RAPTURE-(PHONK)(PagalWorld.Social).mp3",
-        description: "INTERWORLD - RAPTURE RAPTURE - INTERWORLD"
-      },
-      {
-        id: 3,
-        title: "The Lost Soul Mp3🎧",
-        artist: "NBSPLV",
-        image: "https://i.pinimg.com/564x/02/89/8c/02898c1ac7c0b5ad97af001292da7322.jpg",
-        audio: "music/zamona-net-nbsplv-the-lost-soul-down-slowed-reverb.mp3",
-        description: "The Lost Soul Down X Lost Soul · NBSPLV · Nikolay Bespalov · Nikolay Bespalov The Lost Soul Down X Lost Soul ℗ NBSPLV Released on: 2023-08-18"
-      },
-      {
-        id: 4,
-        title: "The Neighbourhood Softcore Mp3🎧",
-        artist: "The Neighbourhood",
-        image: "https://i.pinimg.com/564x/0b/e6/9d/0be69d1804e58f5b13f4de6092ebbfe9.jpg",
-        audio: "music/zamona-net-the-neighbourhood-softcore.mp3",
-        description: "\"Softcore\" by The Neighbourhood Sharing my heart It's tearing me apart But I know I'd miss you, baby"
-      },
-      {
-        id: 5,
-        title: "HOME - Resonance Mp3🎧",
-        artist: "HOME",
-        image: "https://i.pinimg.com/564x/22/c4/d1/22c4d18fea768c0c4948076c7fe61554.jpg",
-        audio: "music/HOME - Resonance.mp3",
-        description: "Nostalgic grooves on this HOME track. Taken from \"Odyssey\" via Midwest Collective."
-      },
-      {
-        id: 6,
-        title: "The Weeknd - I Was Never There",
-        artist: "The Weeknd feat. Gesaffelstein",
-        image: "https://i.pinimg.com/564x/a0/d6/5a/a0d65a1c8af224e6c34a118fabd194cc.jpg",
-        audio: "music/I-Was-Never-There(PaglaSongs).mp3",
-        description: "My Dear Melancholy, Available now from The Weeknd."
-      },
-      {
-        id: 7,
-        title: "The Weeknd - Starboy",
-        artist: "The Weeknd ft. Daft Punk",
-        image: "https://i.pinimg.com/564x/17/e9/20/17e9204783b721db7e1362727c6a18f3.jpg",
-        audio: "music/The20WeekndDaft20Punk20-20Starboy20.mp3",
-        description: "Music video by The Weeknd performing Starboy (Audio). © 2023 The Weeknd XO, Inc., Manufactured and Marketed by Republic Records."
-      },
-      {
-        id: 8,
-        title: "Chris Brown - Under The Influence Mp3🎧",
-        artist: "Chris Brown",
-        image: "https://i.pinimg.com/564x/54/73/ff/5473ff8c30504889725358ca1ef573bd.jpg",
-        audio: "music/Under-The-Influence(PagalWorld).mp3",
-        description: "Chris Brown - Under The Influence! Chris Brown - Under The Influence"
-      },
-      {
-        id: 9,
-        title: "Panic! At The Disco - House of Memories Mp3🎧",
-        artist: "Panic! At The Disco",
-        image: "https://i.pinimg.com/564x/00/b9/f0/00b9f0066f72baf4f4203cebc0c63fe2.jpg",
-        audio: "music/House-Of-Memories-(Slowed-Reverb)-Lofi-Mix(PagalWorld).mp3",
-        description: "Panic! At The Disco - House of Memories"
-      },
-      {
-        id: 10,
-        title: "Ghost - Mary On A Cross Mp3🎧",
-        artist: "Ghost",
-        image: "https://i.pinimg.com/564x/8d/d5/6c/8dd56c4e8049346d2de78c7f645f4f6d.jpg",
-        audio: "music/Ghost---Mary-On-A-Cross(PagalWorld).mp3",
-        description: "Stream \"Mary On A Cross\" from the Seven Inches Of Satanic Panic \"Your beauty never ever scared me\""
-      },
-      {
-        id: 11,
-        title: "Tears For Fears - Everybody Wants To Rule The World",
-        artist: "Tears For Fears",
-        image: "https://i.pinimg.com/564x/9c/ad/2b/9cad2b5172f3be50fc69892174d35a70.jpg",
-        audio: "music/Tears_for_Fears_-_Everybody_Wants_To_Rule_The_World.mp3",
-        description: "Everybody Wants to Rule the World is one of the most famous songs by Tears for Fears."
-      },
-      {
-        id: 12,
-        title: "Calvin Harris, Dua Lipa - One Kiss Mp3🎧",
-        artist: "Calvin Harris & Dua Lipa",
-        image: "https://i.pinimg.com/564x/62/af/43/62af4388b6f44f4aa625fdf2f3be5c1c.jpg",
-        audio: "music/One-Kiss(PaglaSongs).mp3",
-        description: "Calvin Harris & Dua Lipa - One Kiss"
-      }
+    // --- DATA ---
+    const myPlaylist = [
+      { id: 'local-2', title: "METAMORPHOSIS", artist: "INTERWORLD · IVAN BELOZEROV", cover: "https://i.pinimg.com/564x/d8/d6/fa/d8d6fa9287f459cbf70bee4f247f663b.jpg", preview: "music/Metamorphosis(PagalWorld.Social).mp3", source: "local" },
+      { id: 'local-3', title: "RAPTURE (PHONK)", artist: "INTERWORLD", cover: "https://i.pinimg.com/564x/2a/7f/df/2a7fdf566753548414ed6c523fd3a5a9.jpg", preview: "music/RAPTURE-(PHONK)(PagalWorld.Social).mp3", source: "local" },
+      { id: 'local-4', title: "The Lost Soul Down", artist: "NBSPLV", cover: "https://i.pinimg.com/564x/02/89/8c/02898c1ac7c0b5ad97af001292da7322.jpg", preview: "music/zamona-net-nbsplv-the-lost-soul-down-slowed-reverb.mp3", source: "local" },
+      { id: 'local-5', title: "Softcore", artist: "The Neighbourhood", cover: "https://i.pinimg.com/564x/0b/e6/9d/0be69d1804e58f5b13f4de6092ebbfe9.jpg", preview: "music/zamona-net-the-neighbourhood-softcore.mp3", source: "local" },
+      { id: 'local-6', title: "Resonance", artist: "HOME", cover: "https://i.pinimg.com/564x/22/c4/d1/22c4d18fea768c0c4948076c7fe61554.jpg", preview: "music/HOME - Resonance.mp3", source: "local" },
+      { id: 'local-7', title: "I Was Never There", artist: "The Weeknd feat. Gesaffelstein", cover: "https://i.pinimg.com/564x/a0/d6/5a/a0d65a1c8af224e6c34a118fabd194cc.jpg", preview: "music/I-Was-Never-There(PaglaSongs).mp3", source: "local" },
+      { id: 'local-8', title: "Starboy", artist: "The Weeknd ft. Daft Punk", cover: "https://i.pinimg.com/564x/17/e9/20/17e9204783b721db7e1362727c6a18f3.jpg", preview: "music/The20WeekndDaft20Punk20-20Starboy20.mp3", source: "local" },
+      { id: 'local-9', title: "Under The Influence", artist: "Chris Brown", cover: "https://i.pinimg.com/564x/54/73/ff/5473ff8c30504889725358ca1ef573bd.jpg", preview: "music/Under-The-Influence(PagalWorld).mp3", source: "local" },
+      { id: 'local-10', title: "House of Memories", artist: "Panic! At The Disco", cover: "https://i.pinimg.com/564x/00/b9/f0/00b9f0066f72baf4f4203cebc0c63fe2.jpg", preview: "music/House-Of-Memories-(Slowed-Reverb)-Lofi-Mix(PagalWorld).mp3", source: "local" },
+      { id: 'local-11', title: "Mary On A Cross", artist: "Ghost", cover: "https://i.pinimg.com/564x/8d/d5/6c/8dd56c4e8049346d2de78c7f645f4f6d.jpg", preview: "music/Ghost---Mary-On-A-Cross(PagalWorld).mp3", source: "local" },
+      { id: 'local-12', title: "Everybody Wants To Rule The World", artist: "Tears For Fears", cover: "https://i.pinimg.com/564x/9c/ad/2b/9cad2b5172f3be50fc69892174d35a70.jpg", preview: "music/Tears_for_Fears_-_Everybody_Wants_To_Rule_The_World.mp3", source: "local" },
+      { id: 'local-13', title: "One Kiss", artist: "Calvin Harris & Dua Lipa", cover: "https://i.pinimg.com/564x/62/af/43/62af4388b6f44f4aa625fdf2f3be5c1c.jpg", preview: "music/One-Kiss(PaglaSongs).mp3", source: "local" }
     ];
 
-    // Render songs function
-    function renderSongs(songArray) {
-      const musicGrid = document.getElementById('musicGrid');
-      musicGrid.innerHTML = '';
-      
-      songArray.forEach(song => {
-        const songElement = document.createElement('div');
-        songElement.className = 'audioBox';
-        songElement.innerHTML = `
-          <img src="${song.image}" alt="${song.title}">
-          <div class="audio-content">
-            <div class="audio-info">
-              <h3>${song.title}</h3>
-              <p><strong>${song.artist}</strong></p>
-              <p>${song.description}</p>
-            </div>
-            <div class="audio-player">
-              <audio controls>
-                <source src="${song.audio}" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-          </div>
-        `;
-        musicGrid.appendChild(songElement);
-      });
+    // ✅ FIX: The seeds object was missing. It's required for the API playlists.
+    const seeds = {
+      "Pop Favorites": [
+        { "artist": "Taylor Swift", "songs": ["Anti-Hero", "Shake It Off", "Blank Space", "Love Story", "You Belong With Me", "Willow"] },
+        { "artist": "Dua Lipa", "songs": ["Levitating", "Don't Start Now", "New Rules", "Physical", "Break My Heart", "One Kiss"] },
+        { "artist": "Ed Sheeran", "songs": ["Shape of You", "Perfect", "Thinking Out Loud", "Bad Habits", "Castle on the Hill", "Photograph"] },
+        { "artist": "Adele", "songs": ["Hello", "Someone Like You", "Rolling in the Deep", "Set Fire to the Rain", "Easy on Me", "When We Were Young"] },
+        { "artist": "Harry Styles", "songs": ["As It Was", "Watermelon Sugar", "Sign of the Times", "Adore You", "Falling", "Golden"] },
+        { "artist": "Ariana Grande", "songs": ["7 rings", "Thank U, Next", "God Is a Woman", "No Tears Left to Cry", "Positions", "Side to Side"] },
+        { "artist": "Beyoncé", "songs": ["Single Ladies (Put a Ring on It)", "Halo", "Crazy In Love", "Formation", "Drunk in Love", "If I Were a Boy"] },
+        { "artist": "Billie Eilish", "songs": ["Bad Guy", "Everything I Wanted", "Therefore I Am", "Ocean Eyes", "Happier Than Ever", "When the Party's Over"] },
+        { "artist": "Justin Bieber", "songs": ["Sorry", "Love Yourself", "Peaches", "Baby", "What Do You Mean?", "Intentions"] },
+        { "artist": "Bruno Mars", "songs": ["Uptown Funk (w/ Mark Ronson)", "Just the Way You Are", "24K Magic", "That's What I Like", "Grenade", "Locked Out of Heaven"] },
+        { "artist": "Katy Perry", "songs": ["Firework", "Roar", "Dark Horse", "Teenage Dream", "California Gurls", "Last Friday Night"] },
+        { "artist": "Maroon 5", "songs": ["Sugar", "Memories", "Moves Like Jagger", "She Will Be Loved", "Payphone", "Girls Like You"] }
+      ],
+
+      "Chill / Lofi": [
+        { "artist": "HOME", "songs": ["Resonance", "Odyssey (short)", "Blank (if available)", "Revisit", "Late Night Drives"] },
+        { "artist": "INTERWORLD", "songs": ["METAMORPHOSIS", "RAPTURE", "other ambient phonk cuts"] },
+        { "artist": "Nujabes", "songs": ["Feather", "Luv(sic) Part 3", "Aruarian Dance", "Reflection Eternal", "Battlecry", "Counting Stars"] },
+        { "artist": "Khruangbin", "songs": ["Maria También", "So We Won't Forget", "Time (You and I)", "White Gloves", "People Everywhere (Still Alive)"] },
+        { "artist": "Still Woozy", "songs": ["Goodie Bag", "Cocoa", "Habit", "Window", "Karaoke", "Lucy"] },
+        { "artist": "Mac DeMarco", "songs": ["Chamber of Reflection", "My Kind of Woman", "Salad Days", "For the First Time", "Ode to Viceroy", "Cooking Up Something Good"] },
+        { "artist": "Bon Iver", "songs": ["Skinny Love", "Holocene", "33 'God'", "Perth", "Blood Bank", "re: Stacks"] },
+        { "artist": "Washed Out", "songs": ["Feel It All Around", "Amor Fati", "It All Feels Right", "Eyes Be Closed", "New Theory", "Soft"] },
+        { "artist": "Tycho", "songs": ["A Walk", "Awake", "Horizon", "Division", "Dive", "Montana"] },
+        { "artist": "Joji", "songs": ["Slow Dancing in the Dark", "Glimpse of Us", "Sanctuary", "YEAH RIGHT", "Will He", "Ew"] },
+        { "artist": "Cigarettes After Sex", "songs": ["Nothing's Gonna Hurt You Baby", "Apocalypse", "K.", "Each Time You Fall In Love", "Sweet", "Young & Dumb"] },
+        { "artist": "M83", "songs": ["Midnight City", "Wait", "Outro", "Reunion", "Steve McQueen", "Kim & Jessie"] }
+      ],
+
+      "Rock & Alternative": [
+        { "artist": "The Neighbourhood", "songs": ["Sweater Weather", "Daddy Issues", "Afraid", "R.I.P. 2 My Youth", "Stargazing", "The Beach"] },
+        { "artist": "Arctic Monkeys", "songs": ["Do I Wanna Know?", "I Bet You Look Good on the Dancefloor", "R U Mine?", "505", "Why'd You Only Call Me When You're High?", "Fluorescent Adolescent"] },
+        { "artist": "Tame Impala", "songs": ["The Less I Know The Better", "Let It Happen", "Elephant", "Feels Like We Only Go Backwards", "Borderline", "Eventually"] },
+        { "artist": "The Killers", "songs": ["Mr. Brightside", "Somebody Told Me", "When You Were Young", "Human", "Smile Like You Mean It", "All These Things That I've Done"] },
+        { "artist": "Ghost", "songs": ["Square Hammer", "Mary On A Cross", "Cirice", "Rats", "He Is", "Dance Macabre"] },
+        { "artist": "Radiohead", "songs": ["Creep", "Karma Police", "Paranoid Android", "No Surprises", "High and Dry", "Everything In Its Right Place"] },
+        { "artist": "Foo Fighters", "songs": ["Everlong", "The Pretender", "Best of You", "Learn to Fly", "My Hero", "Times Like These"] },
+        { "artist": "Red Hot Chili Peppers", "songs": ["Californication", "Under the Bridge", "Snow (Hey Oh)", "Scar Tissue", "Give It Away", "By the Way"] },
+        { "artist": "Muse", "songs": ["Uprising", "Starlight", "Time Is Running Out", "Madness", "Knights of Cydonia", "Plug In Baby"] },
+        { "artist": "Imagine Dragons", "songs": ["Radioactive", "Believer", "Thunder", "Demons", "Bad Liar", "It's Time"] },
+        { "artist": "Pearl Jam", "songs": ["Alive", "Even Flow", "Jeremy", "Black", "Better Man", "Daughter"] },
+        { "artist": "Fleetwood Mac", "songs": ["Dreams", "Go Your Own Way", "The Chain", "Landslide", "Rhiannon", "Everywhere"] }
+      ],
+
+      "R&B / Modern": [
+        { "artist": "The Weeknd", "songs": ["Blinding Lights", "Save Your Tears", "I Was Never There", "Can't Feel My Face", "The Hills", "In the Night"] },
+        { "artist": "SZA", "songs": ["Kill Bill", "Good Days", "Love Galore", "The Weekend", "Broken Clocks", "Garden (Say It Like Dat)"] },
+        { "artist": "Frank Ocean", "songs": ["Thinkin Bout You", "Pyramids", "Nikes", "Ivy", "Swim Good", "Pink + White"] },
+        { "artist": "Doja Cat", "songs": ["Say So", "Kiss Me More", "Woman", "Need to Know", "Streets", "Juicy"] },
+        { "artist": "Brent Faiyaz", "songs": ["Clouded", "Dead Man Walking", "Gravity (feat. Tyler, The Creator)", "Trust", "Rehab (Winter in Paris)", "Make Luv"] },
+        { "artist": "Drake", "songs": ["God's Plan", "Hotline Bling", "One Dance", "In My Feelings", "Hold On, We're Going Home", "Passionfruit"] },
+        { "artist": "Alicia Keys", "songs": ["Fallin'", "If I Ain't Got You", "No One", "Girl on Fire", "Empire State of Mind (Part II)", "Un-Thinkable"] },
+        { "artist": "Miguel", "songs": ["Adorn", "Sure Thing", "Coffee", "Sky Walker", "Do You...", "How Many"] },
+        { "artist": "H.E.R.", "songs": ["Focus", "Best Part (w/ Daniel Caesar)", "Hard Place", "Slide (w/ YG)", "Damage", "Comfortable"] },
+        { "artist": "Jhené Aiko", "songs": ["The Worst", "Spotless Mind", "While We're Young", "Sailing Not Selling", "Triggered (freestyle)", "P*$$Y Fairy (OTW)"] },
+        { "artist": "Daniel Caesar", "songs": ["Get You", "Best Part (w/ H.E.R.)", "Japanese Denim", "Hold Me Down", "We Find Love", "Blessed"] },
+        { "artist": "Bruno Mars", "songs": ["That's What I Like", "Versace on the Floor", "When I Was Your Man", "24K Magic", "Locked Out of Heaven", "Just the Way You Are"] }
+      ]
+    };
+
+
+    // --- STATE ---
+    let currentPlaying = { audio: null, button: null, trackId: null };
+
+    // --- DOM ELEMENTS ---
+    const playlistsEl = document.getElementById('playlists');
+    const player = document.getElementById('player');
+    const playerFooter = document.getElementById('player-footer');
+    const nowCover = document.getElementById('nowCover');
+    const nowTitle = document.getElementById('nowTitle');
+    const nowArtist = document.getElementById('nowArtist');
+    const searchBox = document.getElementById('searchBox');
+    const homeBtn = document.getElementById('homeBtn');
+
+    // --- API & DATA HANDLING ---
+    async function fetchItunesFor(term, limit = 25) { // ✅ Increased default fetch limit
+      const url = `https://itunes.apple.com/search?term=${encodeURIComponent(term)}&entity=song&limit=${limit}`;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('iTunes fetch failed');
+        const j = await res.json();
+        return j.results.map(r => ({
+          id: r.trackId,
+          title: r.trackName || r.collectionName,
+          artist: r.artistName,
+          cover: r.artworkUrl100?.replace('100x100', '400x400') || r.artworkUrl60,
+          preview: r.previewUrl,
+          source: 'itunes',
+        }));
+      } catch (err) {
+        console.warn('iTunes fetch error', err);
+        return [];
+      }
     }
 
-    // Search functionality
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-      const searchTerm = e.target.value.toLowerCase();
-      const filteredSongs = songs.filter(song => 
-        song.title.toLowerCase().includes(searchTerm) || 
-        song.artist.toLowerCase().includes(searchTerm) ||
-        song.description.toLowerCase().includes(searchTerm)
-      );
-      renderSongs(filteredSongs);
-    });
+    // --- UI RENDERING ---
 
-    // Initial render
-    renderSongs(songs);
+    // ✅ NEW: A function to create a placeholder card for a better loading experience
+    function createPlaceholderCard(title) {
+      const card = document.createElement('div');
+      card.className = 'playlist-card';
+      card.innerHTML = `<h2>${title}</h2><div class="tracks" style="justify-content:center; align-items:center; min-height:150px;">
+        <p style="color:var(--muted);">Loading tracks...</p>
+      </div>`;
+      return card;
+    }
+
+    function createPlaylistCard(title, tracks) {
+      const card = document.createElement('div');
+      card.className = 'playlist-card';
+      card.innerHTML = `<h2>${title}</h2><div class="tracks"></div>`;
+      const tracksEl = card.querySelector('.tracks');
+
+      if (tracks.length === 0) {
+        tracksEl.innerHTML = `<p style="color:var(--muted);">No tracks found.</p>`;
+        return card;
+      }
+
+      tracks.forEach(t => {
+        const tr = document.createElement('div');
+        tr.className = 'track';
+        tr.dataset.trackId = t.id;
+        tr.dataset.previewUrl = t.preview || '';
+        tr.dataset.cover = t.cover || '';
+        tr.dataset.title = t.title || 'Unknown Title';
+        tr.dataset.artist = t.artist || 'Unknown Artist';
+        tr.innerHTML = `
+          <img class="cover" src="${t.cover || 'https://via.placeholder.com/100'}" alt="album cover" loading="lazy">
+          <div class="meta">
+            <h3>${escapeHtml(t.title)}</h3>
+            <p>${escapeHtml(t.artist)}</p>
+          </div>
+          <button class="play-btn" aria-label="Play">
+            <i class="ri-play-fill"></i>
+          </button>`;
+        tracksEl.appendChild(tr);
+      });
+      return card;
+    }
+
+    function escapeHtml(s) {
+      return (s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    // --- PLAYER LOGIC ---
+    function playTrack(trackData, button) {
+      const { trackId, previewUrl, cover, title, artist } = trackData;
+      const currentTrackIdStr = currentPlaying.trackId ? currentPlaying.trackId.toString() : null;
+
+      if (currentPlaying.audio && currentTrackIdStr !== trackId) {
+        currentPlaying.audio.pause();
+        if (currentPlaying.button) {
+          currentPlaying.button.innerHTML = '<i class="ri-play-fill"></i>';
+          currentPlaying.button.classList.remove('playing');
+        }
+      }
+
+      if (currentTrackIdStr === trackId) {
+        if (player.paused) { player.play(); } else { player.pause(); }
+        return;
+      }
+
+      player.src = previewUrl;
+      player.play().catch(e => console.error("Autoplay was blocked", e));
+
+      nowCover.src = cover;
+      nowTitle.textContent = title;
+      nowArtist.textContent = artist;
+      playerFooter.style.display = 'block';
+
+      currentPlaying = { audio: player, button: button, trackId: trackId };
+      button.innerHTML = '<i class="ri-pause-fill"></i>';
+      button.classList.add('playing');
+    }
+
+    function handlePlayButtonClick(ev) {
+      const btn = ev.target.closest('.play-btn');
+      if (!btn) return;
+      const trackDiv = btn.closest('.track');
+      const { trackId, previewUrl, cover, title, artist } = trackDiv.dataset;
+      if (!previewUrl) {
+        alert('Preview not available for this track.');
+        return;
+      }
+      playTrack({ trackId, previewUrl, cover, title, artist }, btn);
+    }
+
+    player.onplay = () => {
+      if (currentPlaying.button) {
+        currentPlaying.button.innerHTML = '<i class="ri-pause-fill"></i>';
+        currentPlaying.button.classList.add('playing');
+      }
+    };
+    player.onpause = player.onended = () => {
+      if (currentPlaying.button) {
+        currentPlaying.button.innerHTML = '<i class="ri-play-fill"></i>';
+        currentPlaying.button.classList.remove('playing');
+      }
+      if (player.ended) {
+        currentPlaying = { audio: null, button: null, trackId: null };
+      }
+    };
+
+    // --- APP INITIALIZATION & EVENTS ---
+
+    // ✅ MODIFIED: buildPlaylists now renders each playlist progressively for a faster feel.
+    async function buildPlaylists() {
+      playlistsEl.innerHTML = ''; // Clear view
+
+      // 1. Render your static playlist first (it's instant)
+      const myPlaylistCard = createPlaylistCard('My Playlist', myPlaylist);
+      playlistsEl.appendChild(myPlaylistCard);
+
+      // 2. Loop through API-based playlists
+      for (const [plName, artists] of Object.entries(seeds)) {
+        // Immediately show a placeholder card
+        const placeholder = createPlaceholderCard(plName);
+        playlistsEl.appendChild(placeholder);
+
+        // Asynchronously fetch and process data for this one playlist
+        (async () => {
+          const promises = artists.map(a => fetchItunesFor(a, 25)); // Fetch more songs
+          const results = (await Promise.all(promises)).flat();
+
+          const unique = [];
+          const seen = new Set();
+          for (const r of results) {
+            if (!r.preview || !r.id || seen.has(r.id)) continue;
+            seen.add(r.id);
+            unique.push(r);
+          }
+
+          const topTracks = unique.slice(0, 20); // Display more songs
+
+          // Create the final card with data
+          const finalCard = createPlaylistCard(plName, topTracks);
+
+          // Replace the placeholder with the final card
+          placeholder.replaceWith(finalCard);
+        })();
+      }
+    }
+
+    async function handleSearch() {
+      const q = searchBox.value.trim();
+      if (!q) return;
+      playlistsEl.innerHTML = `<h2 style="font-weight:500;">Searching...</h2>`;
+      const results = await fetchItunesFor(q, 50); // Increase search results limit
+      playlistsEl.innerHTML = '';
+      const card = createPlaylistCard(`Search results for "${escapeHtml(q)}"`, results);
+      playlistsEl.appendChild(card);
+    }
+
+    searchBox.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') handleSearch();
+    });
+    homeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      searchBox.value = '';
+      buildPlaylists();
+    });
+    playlistsEl.addEventListener('click', handlePlayButtonClick);
+
+    // Initial build
+    buildPlaylists();
   </script>
 </body>
+
 </html>
