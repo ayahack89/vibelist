@@ -244,6 +244,56 @@ main {
   transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
+.save-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: transform 0.08s ease, background 0.12s ease;
+  flex-shrink: 0;
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.save-btn.saved {
+  color: var(--accent);
+  border-color: rgba(106, 123, 255, 0.3);
+  background: rgba(106, 123, 255, 0.06);
+}
+
+.track[draggable="true"] {
+  cursor: grab;
+}
+
+.track.dragging {
+  opacity: 0.5;
+  transform: scale(0.98);
+}
+
+.tracks.drag-over {
+  outline: 2px dashed rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* keep audio element at same size */
+audio {
+  width: 100%;
+  max-width: 450px;
+}
+
 .track:hover .play-btn {
   transform: scale(1.1);
 }

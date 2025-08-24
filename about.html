@@ -1,85 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/about.css" />
-    <title>About "Me"!</title>
-  </head>
-  <body>
-    <nav class="nav">
-      <h1 class="aboutHeading">About "Me" 🙂</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Ayanabha Chatterjee</title>
+
+  <!-- Fonts & icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Page stylesheet -->
+  <link rel="stylesheet" href="../css/about.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <i class="ri-music-ai-line" aria-hidden="true"></i>
+      <div class="brand-text">
+        <span class="brand-name">Vibelist</span>
+        <span class="brand-sub">Work with a vibe</span>
+      </div>
+    </div>
+
+    <nav class="header-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../main.html" class="nav-link primary">Open App <i class="ri-play-mini-line"></i></a>
     </nav>
+  </header>
 
-    <main>
-      <div class="main">
-        <div class="image">
-          <img width="250px" height="250px" src="img/my-imageee.jpeg" alt="" />
-        </div>
-        <h2><u>Introduction</u></h2>
+  <main class="content-wrap" role="main">
+    <article class="about-card" aria-labelledby="about-heading">
+      <aside class="profile">
+        <img src="img/me.jpg" alt="Ayanabha Chatterjee" width="320" height="320" />
+      </aside>
 
+      <section class="about-body">
+        <h1 id="about-heading">About Me</h1>
+
+        <h2>Introduction</h2>
         <p>
-          👋 Hello! Welcome to my website. My name is Ayanabha Chatterjee. I'm
-          19 years old. My only purpas to create this website👨‍💻 to store my
-          favorite songs 🎶, music 🎧, phonex ⚡ etc.
+          Hello — I am <strong>Ayanabha Chatterjee</strong>, a 19-year-old developer and the creator of this project.
+          I built this site to collect and organise my favourite tracks and short previews in a simple, frontend-first
+          application.
         </p>
-        <h2><u>Website Details</u></h2>
+
+        <h2>Website Overview</h2>
         <p>
-          MYPLaYLIST🎧 is a personalized music streaming service that has a
-          custom playlists for based on the listening habits and preferences.
-          This means I create this website for based no my personal tast of
-          listening music.
+          <strong>Vibelist</strong> is a personal music playground for browsing curated playlists and short preview
+          clips.
+          The site is intended as a lightweight, educational/demo project and is inspired by modern streaming
+          interfaces.
+          It is not affiliated with the commercial streaming services.
         </p>
-        <h2><u>Feature</u></h2>
+
+        <h2>Features</h2>
         <p>
-          You can use my playlist for listning music. Plus you can download⬇️
-          the musics. If you want to list more music then you click the Spotify
-          button & go to the Spotify to listning songs 🎶, music 🎧, phonex ⚡
-          etc.
+          You can browse tracks, save songs to your personal playlist, and play short preview clips. Some tracks may
+          offer
+          preview streams; for full-length playback, please use licensed streaming providers.
         </p>
-        <h2><u>Issue</u></h2>
+
+        <h2>Known Issues</h2>
         <p>
-          The problem is when you listning a music and suddenly you scroll and
-          start another music without stop the previous music. <br />
-          It's overlapped the sounds🔊. So becarefull about that you should
-          pause⏯️ the presant music & then you start the another one⏸️.
+          When playing multiple tracks in different areas of the app, audio can overlap if an existing preview is not
+          paused
+          before starting another. Please pause the currently playing preview before starting a new one. This is a UI/UX
+          limitation, note for now and may be improved in later updates.
         </p>
-      </div>
-    </main>
-    <footer class="foter">
-      &#64; Connect with me :-
-      <div class="fotericon">
-        <div class="insta">
-          <a href="https://instagram.com/a_vengeanc.e/" target="_blank"
-            ><ion-icon name="logo-instagram"></ion-icon
-          ></a>
+
+        <div class="actions">
+          <a class="btn primary" href="../main.html">Open Vibelist</a>
+          <a class="btn ghost" href="../index.html">Return home</a>
         </div>
-        <div class="twitt">
-          <a href="https://twitter.com/ayanabhach08" target="_blank"
-            ><ion-icon name="logo-twitter"></ion-icon
-          ></a>
-        </div>
-        <div class="git">
-          <a href="https://github.com/aYgCOO" target="_blank"
-            ><ion-icon name="logo-github"></ion-icon
-          ></a>
-        </div>
-        <div class="You">
-          <a
-            href="https://www.youtube.com/channel/UCfVk9QwieYqG6X-TdqLetLQ"
-            target="_blank"
-            ><ion-icon name="logo-youtube"></ion-icon>
-          </a>
-        </div>
-        <div class="link">
-          <a
-            href="https://www.linkedin.com/in/ayanabha-chatterjee-104979256/"
-            target="_blank"
-            ><ion-icon class="navIcons" name="logo-linkedin"></ion-icon
-          ></a>
-        </div>
-      </div>
-    </footer>
-    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
-  </body>
+      </section>
+    </article>
+
+    <section class="note">
+      <strong>Note:</strong> Vibelist is a personal, frontend-only demo that uses public music APIs for metadata and
+      short preview clips (≈30 seconds). For full-length streaming or commercial use, please use licensed providers such
+      as Spotify or Apple Music. This project is intended for learning and personal use.
+    </section>
+  </main>
+
+  <div class="footer-inner">
+    <div class="contact-group" aria-label="Contact">
+      <!-- Email button -->
+      <a class="contact-btn" href="mailto:ayanabhachatterjee@gmail.com" title="Email me" rel="noopener">
+        <span class="icon-wrap" aria-hidden="true" style="background: linear-gradient(135deg,var(--accent-end,#6ad1c8),var(--accent-start,#8aa2ff));">
+          <!-- envelope svg -->
+          <svg width="20" height="14" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 3.5C2 2.67157 2.67157 2 3.5 2H20.5C21.3284 2 22 2.67157 22 3.5V14.5C22 15.3284 21.3284 16 20.5 16H3.5C2.67157 16 2 15.3284 2 14.5V3.5Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 3L12 10L2 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="contact-meta">
+          <span class="title">Email (for dev & collaboration)</span>
+          <span class="value">ayanabhachatterjee@gmail.com</span>
+        </span>
+      </a>
+
+      <!-- X (official) button -->
+    <a class="contact-btn" href="https://x.com/ayanabha08" target="_blank" rel="noopener" title="Mostly active on X" aria-label="X (formerly Twitter)">
+    <span class="icon-wrap" aria-hidden="true">
+      <i class="ri-twitter-x-fill"></i>
+    </span>
+    <span class="contact-meta">
+      <span class="title">Mostly active on</span>
+      <span class="value">@ayanabha08</span>
+    </span>
+  </a>
+    </div>
+
+    <div class="right-note" aria-hidden="true">
+      © Ayanabha Chatterjee
+    </div>
+  </div>
+</footer>
+</body>
+
 </html>

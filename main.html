@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <title>Vibelist - Work with a vibe</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,56 +14,112 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-
-
-
 </head>
 
 <body>
-
   <div class="wrap">
     <header>
-      <div class="header-content">
-        <div class="logo">
-          <i class="ri-music-ai-line"></i>
-          <span>Vibelist</span>
-        </div>
-        <div class="controls">
-          <div class="search" title="Search songs or artists (iTunes)">
-            <i class="ri-search-line"></i>
-            <input id="searchBox" style='font-family: "Libertinus Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;' placeholder="Search songs, artists (press Enter)" />
+      <div class="header-content" style="align-items:center; gap:18px;">
+        <!-- Logo: subtle gradient text + small tagline -->
+        <div class="logo" style="display:flex; align-items:center; gap:12px;">
+          <i class="ri-music-ai-line" style="font-size:34px; color:var(--accent);"></i>
+          <div style="display:flex; flex-direction:column; line-height:1;">
+            <span style="font-weight:700; font-size:1.6rem;
+                     background: linear-gradient(90deg,#8aa2ff,#6ad1c8);
+                     -webkit-background-clip: text; color: transparent;">
+              Vibelist
+            </span>
+            <small style="font-size:12px; color:var(--muted); margin-top:2px;">Work with a vibe</small>
           </div>
         </div>
-        <nav class="navv">
-          <ul>
+
+        <!-- Center controls: search (keeps same id for JS) -->
+        <div class="controls" style="flex:1; display:flex; justify-content:center;">
+          <div class="search" title="Search songs or artists (iTunes)" style="display:flex; align-items:center; gap:10px; background: rgba(255,255,255,0.02);
+                  border:1px solid var(--border-color); padding:8px 14px; border-radius:999px; width:100%;
+                  max-width:520px;">
+            <i class="ri-search-line" style="color:var(--muted); font-size:18px;"></i>
+            <input id="searchBox"
+              style='background:transparent; border:0; outline:0; color:inherit; width:100%;
+                      font-family: "Libertinus Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;'
+              placeholder="Search songs, artists (press Enter)" />
+            <!-- subtle clear button (no behavior required; you can hook JS to it if needed) -->
+            <button type="button" class="clear-search" aria-label="Clear search" style="border:0; background:transparent; width:36px; height:36px; border-radius:8px; display:flex;
+                       align-items:center; justify-content:center; color:var(--muted); cursor:pointer;">
+              <i class="ri-close-line" style="font-size:18px;"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right navigation icons: pill buttons for modern/clean look -->
+        <nav class="navv" style="display:flex; align-items:center;">
+          <ul style="display:flex; gap:10px; margin:0; padding:0; align-items:center; list-style:none;">
             <li>
               <div class="tooltip">
-                <a href="#" id="homeBtn"><i class="ri-home-5-line"></i></a>
+                <a href="#" id="homeBtn" style="display:inline-flex; align-items:center; justify-content:center;
+                                             width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.02);
+                                             border:1px solid transparent; color:var(--muted);">
+                  <i class="ri-home-5-line" style="font-size:18px;"></i>
+                </a>
                 <div class="tooltipText">Home</div>
               </div>
             </li>
+
             <li>
               <div class="tooltip">
-                <a href="https://open.spotify.com" target="_blank"><i class="ri-spotify-line"></i></a>
+                <a href="https://open.spotify.com" target="_blank"
+                  style="display:inline-flex; align-items:center; justify-content:center;
+                                                                       width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.02);
+                                                                       border:1px solid transparent; color:var(--muted);">
+                  <i class="ri-spotify-line" style="font-size:18px;"></i>
+                </a>
                 <div class="tooltipText">Spotify</div>
               </div>
             </li>
+
             <li>
               <div class="tooltip">
-                <a href="https://x.com/ayanabha08" target="_blank"><i class="ri-twitter-x-fill"></i></a>
+                <a href="https://x.com/ayanabha08" target="_blank"
+                  style="display:inline-flex; align-items:center; justify-content:center;
+                                                                      width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.02);
+                                                                      border:1px solid transparent; color:var(--muted);">
+                  <i class="ri-twitter-x-fill" style="font-size:18px;"></i>
+                </a>
                 <div class="tooltipText">X (Formaly twitter)</div>
               </div>
             </li>
+
             <li>
               <div class="tooltip">
-                <a href="https://www.github.com" target="_blank"><i class="ri-github-line"></i></a>
-                <div class="tooltipText">Github</div>
+                <a href="https://www.github.com/ayahack89/" target="_blank"
+                  style="display:inline-flex; align-items:center; justify-content:center;
+                                                                      width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.02);
+                                                                      border:1px solid transparent; color:var(--muted);">
+                  <i class="ri-github-line" style="font-size:18px;"></i>
+                </a>
+                <div class="tooltipText">Github repo</div>
               </div>
             </li>
+
             <li>
               <div class="tooltip">
-                <a href="about.html" target="_blank"><i class="ri-attachment-line"></i></a>
+                <a href="about.html" style="display:inline-flex; align-items:center; justify-content:center;
+                                                        width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.02);
+                                                        border:1px solid transparent; color:var(--muted);">
+                  <i class="ri-attachment-line" style="font-size:18px;"></i>
+                </a>
                 <div class="tooltipText">About</div>
+              </div>
+            </li>
+
+            <!-- small user avatar (keeps header balanced and modern) -->
+            <li>
+              <div style="display:inline-flex; align-items:center; gap:8px; margin-left:6px;">
+                <div class="avatar" title="You"
+                  style="width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+                        font-size:13px; font-weight:600; background:linear-gradient(135deg,#5ea4ff,#8ee0c1); color:#042033;">
+                  A
+                </div>
               </div>
             </li>
           </ul>
@@ -72,15 +127,23 @@
       </div>
     </header>
 
+
     <main>
       <div class="grid" id="playlists">
       </div>
       <div
         style="margin-top:24px; text-align:center; padding: 20px; background: var(--card); border-radius: 12px; border: 1px solid var(--border-color);">
         <h2 style="margin-top:0;">What you need to know</h2>
-        <p style="font-size:14px; color: var(--muted); max-width: 600px; margin: 0 auto;">This app uses public music
-          APIs for metadata and short preview streams (≈30s). For full commercial streaming, licensed providers are
-          required.</p>
+        <p
+          style="font-size:14px; color: var(--muted); max-width: 650px; margin: 1.5rem auto 0; line-height: 1.6; text-align: center;">
+          <strong>Note:</strong> Vibelist is a personal, frontend-only project built for fun and inspiration.
+          It uses public music APIs to fetch song metadata and provide short preview clips (≈30 seconds).
+          For full-length streaming, please use licensed providers such as <a href="https://spotify.com" target="_blank"
+            style="color: var(--primary); text-decoration: none;">Spotify</a>, Apple Music, or others.
+          Think of this as a <em>Spotify-inspired demo</em> — a lightweight way to explore and enjoy vibes, not affiliated with
+          commercial streaming service. 
+        </p>
+
       </div>
     </main>
   </div>
@@ -115,7 +178,6 @@
       { id: 'local-13', title: "One Kiss", artist: "Calvin Harris & Dua Lipa", cover: "https://i.pinimg.com/564x/62/af/43/62af4388b6f44f4aa625fdf2f3be5c1c.jpg", preview: "music/One-Kiss(PaglaSongs).mp3", source: "local" }
     ];
 
-    // ✅ FIX: The seeds object was missing. It's required for the API playlists.
     const seeds = {
       "Pop Favorites": [
         { "artist": "Taylor Swift", "songs": ["Anti-Hero", "Shake It Off", "Blank Space", "Love Story", "You Belong With Me", "Willow"] },
@@ -178,9 +240,9 @@
       ]
     };
 
-
     // --- STATE ---
     let currentPlaying = { audio: null, button: null, trackId: null };
+    let dragSrcEl = null;
 
     // --- DOM ELEMENTS ---
     const playlistsEl = document.getElementById('playlists');
@@ -192,8 +254,21 @@
     const searchBox = document.getElementById('searchBox');
     const homeBtn = document.getElementById('homeBtn');
 
-    // --- API & DATA HANDLING ---
-    async function fetchItunesFor(term, limit = 25) { // ✅ Increased default fetch limit
+    // --- HELPERS ---
+    function escapeHtml(s) {
+      return (s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // --- API ---
+    async function fetchItunesFor(term, limit = 25) {
       const url = `https://itunes.apple.com/search?term=${encodeURIComponent(term)}&entity=song&limit=${limit}`;
       try {
         const res = await fetch(url);
@@ -213,56 +288,170 @@
       }
     }
 
-    // --- UI RENDERING ---
+    // --- UI: create a track element (centralized so we can attach events once) ---
+    function createTrackElement(t, options = {}) {
+      // t: object with id, title, artist, cover, preview, source
+      const tr = document.createElement('div');
+      tr.className = 'track';
+      tr.dataset.trackId = t.id;
+      tr.dataset.previewUrl = t.preview || '';
+      tr.dataset.cover = t.cover || '';
+      tr.dataset.title = t.title || 'Unknown Title';
+      tr.dataset.artist = t.artist || 'Unknown Artist';
+      if (options.playlistName) tr.closestPlaylist = options.playlistName; // not reliable — used for debug only
 
-    // ✅ NEW: A function to create a placeholder card for a better loading experience
-    function createPlaceholderCard(title) {
-      const card = document.createElement('div');
-      card.className = 'playlist-card';
-      card.innerHTML = `<h2>${title}</h2><div class="tracks" style="justify-content:center; align-items:center; min-height:150px;">
-        <p style="color:var(--muted);">Loading tracks...</p>
-      </div>`;
-      return card;
-    }
+      tr.setAttribute('draggable', 'true');
 
-    function createPlaylistCard(title, tracks) {
-      const card = document.createElement('div');
-      card.className = 'playlist-card';
-      card.innerHTML = `<h2>${title}</h2><div class="tracks"></div>`;
-      const tracksEl = card.querySelector('.tracks');
-
-      if (tracks.length === 0) {
-        tracksEl.innerHTML = `<p style="color:var(--muted);">No tracks found.</p>`;
-        return card;
-      }
-
-      tracks.forEach(t => {
-        const tr = document.createElement('div');
-        tr.className = 'track';
-        tr.dataset.trackId = t.id;
-        tr.dataset.previewUrl = t.preview || '';
-        tr.dataset.cover = t.cover || '';
-        tr.dataset.title = t.title || 'Unknown Title';
-        tr.dataset.artist = t.artist || 'Unknown Artist';
-        tr.innerHTML = `
+      tr.innerHTML = `
           <img class="cover" src="${t.cover || 'https://via.placeholder.com/100'}" alt="album cover" loading="lazy">
           <div class="meta">
             <h3>${escapeHtml(t.title)}</h3>
             <p>${escapeHtml(t.artist)}</p>
           </div>
-          <button class="play-btn" aria-label="Play">
-            <i class="ri-play-fill"></i>
-          </button>`;
+          <div style="display:flex; align-items:center;">
+            <button class="play-btn" aria-label="Play">
+              <i class="ri-play-fill"></i>
+            </button>
+            <button class="save-btn" aria-label="Save" title="Save to My Playlist"><i class="ri-bookmark-line"></i></button>
+          </div>`;
+
+      // drag events
+      tr.addEventListener('dragstart', (ev) => {
+        dragSrcEl = tr;
+        tr.classList.add('dragging');
+        const payload = {
+          id: tr.dataset.trackId,
+          title: tr.dataset.title,
+          artist: tr.dataset.artist,
+          cover: tr.dataset.cover,
+          preview: tr.dataset.previewUrl,
+          source: t.source || 'unknown'
+        };
+        ev.dataTransfer.setData('application/json', JSON.stringify(payload));
+        ev.dataTransfer.effectAllowed = 'move';
+        // optionally set a drag image
+        try {
+          const dragImg = tr.cloneNode(true);
+          dragImg.style.position = 'absolute';
+          dragImg.style.top = '-9999px';
+          dragImg.style.left = '-9999px';
+          document.body.appendChild(dragImg);
+          ev.dataTransfer.setDragImage(dragImg, 20, 20);
+          setTimeout(() => document.body.removeChild(dragImg), 0);
+        } catch (e) { /* ignore */ }
+      });
+
+      tr.addEventListener('dragend', () => {
+        tr.classList.remove('dragging');
+        dragSrcEl = null;
+        document.querySelectorAll('.tracks').forEach(el => el.classList.remove('drag-over'));
+      });
+
+      return tr;
+    }
+
+    // --- playlist card creation ---
+    function createPlaylistCard(title, tracks, opts = {}) {
+      const card = document.createElement('div');
+      card.className = 'playlist-card';
+      if (opts.isMy) card.id = 'my-playlist-card';
+      card.dataset.playlistName = title;
+      card.innerHTML = `<h2>${escapeHtml(title)}</h2><div class="tracks"></div>`;
+      const tracksEl = card.querySelector('.tracks');
+
+      // allow drop on tracks area
+      tracksEl.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        tracksEl.classList.add('drag-over');
+        e.dataTransfer.dropEffect = 'move';
+      });
+      tracksEl.addEventListener('dragleave', () => tracksEl.classList.remove('drag-over'));
+      tracksEl.addEventListener('drop', (e) => {
+        e.preventDefault();
+        tracksEl.classList.remove('drag-over');
+
+        const data = e.dataTransfer.getData('application/json');
+        let payload = null;
+        if (data) {
+          try { payload = JSON.parse(data); } catch (err) { payload = null; }
+        }
+
+        // If dragging a DOM element from this page (dragSrcEl exists), we will move it.
+        if (dragSrcEl && dragSrcEl.closest('.tracks')) {
+          const sourceCard = dragSrcEl.closest('.playlist-card');
+          const destCard = tracksEl.closest('.playlist-card');
+
+          // If dropping into same container, move position to end (or between items could be improved)
+          tracksEl.appendChild(dragSrcEl);
+
+          // handle myPlaylist array updates
+          if (destCard.id === 'my-playlist-card') {
+            // add to myPlaylist if not present
+            const toAdd = extractTrackDataFromElement(dragSrcEl);
+            addToMyPlaylist(toAdd, /*scrollIntoView*/ false);
+          }
+          if (sourceCard && sourceCard.id === 'my-playlist-card' && destCard.id !== 'my-playlist-card') {
+            // removed from My Playlist — remove from array
+            const removedId = dragSrcEl.dataset.trackId;
+            removeFromMyPlaylistById(removedId);
+            // update save button state if present in source (we moved the element out)
+          }
+          updateSaveButtonsState();
+          return;
+        }
+
+        // If payload exists (maybe external drag or newly constructed), create a new element and insert
+        if (payload) {
+          const newEl = createTrackElement(payload);
+          tracksEl.appendChild(newEl);
+
+          // If dropping into My Playlist, persist into myPlaylist data model
+          const destCard = tracksEl.closest('.playlist-card');
+          if (destCard && destCard.id === 'my-playlist-card') {
+            addToMyPlaylist(payload, false);
+            updateSaveButtonsState();
+          }
+        }
+      });
+
+      // fill tracks
+      if (!tracks || tracks.length === 0) {
+        tracksEl.innerHTML = `<p style="color:var(--muted);">No tracks found.</p>`;
+        return card;
+      }
+
+      tracks.forEach(t => {
+        const tr = createTrackElement(t, { playlistName: title });
         tracksEl.appendChild(tr);
       });
+
       return card;
     }
 
-    function escapeHtml(s) {
-      return (s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    // helper: build track DOM from dataset (for append in myPlaylist)
+    function createTrackElementFromData(d) {
+      return createTrackElement({
+        id: d.id,
+        title: d.title,
+        artist: d.artist,
+        cover: d.cover,
+        preview: d.preview,
+        source: d.source || 'unknown'
+      });
     }
 
-    // --- PLAYER LOGIC ---
+    function extractTrackDataFromElement(el) {
+      return {
+        id: el.dataset.trackId,
+        title: el.dataset.title,
+        artist: el.dataset.artist,
+        cover: el.dataset.cover,
+        preview: el.dataset.previewUrl,
+        source: el.dataset.source || 'unknown'
+      };
+    }
+
+    // --- Player logic ---
     function playTrack(trackData, button) {
       const { trackId, previewUrl, cover, title, artist } = trackData;
       const currentTrackIdStr = currentPlaying.trackId ? currentPlaying.trackId.toString() : null;
@@ -321,25 +510,89 @@
       }
     };
 
-    // --- APP INITIALIZATION & EVENTS ---
+    // --- Save (add to My Playlist) logic ---
+    function addToMyPlaylist(trackObj, scrollIntoView = true) {
+      if (!trackObj || !trackObj.id) return;
+      if (myPlaylist.some(t => t.id.toString() === trackObj.id.toString())) return; // avoid duplicates
 
-    // ✅ MODIFIED: buildPlaylists now renders each playlist progressively for a faster feel.
+      // normalize object fields
+      const normalized = {
+        id: trackObj.id.toString(),
+        title: trackObj.title || 'Unknown Title',
+        artist: trackObj.artist || 'Unknown Artist',
+        cover: trackObj.cover || '',
+        preview: trackObj.preview || '',
+        source: trackObj.source || 'unknown'
+      };
+      myPlaylist.push(normalized);
+
+      // append to My Playlist DOM if exists
+      const myCard = document.getElementById('my-playlist-card');
+      if (myCard) {
+        const tracksEl = myCard.querySelector('.tracks');
+        const el = createTrackElementFromData(normalized);
+        tracksEl.appendChild(el);
+        if (scrollIntoView) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      updateSaveButtonsState();
+    }
+
+    function removeFromMyPlaylistById(id) {
+      const idx = myPlaylist.findIndex(t => t.id.toString() === id.toString());
+      if (idx === -1) return;
+      myPlaylist.splice(idx, 1);
+      // update DOM
+      const myCard = document.getElementById('my-playlist-card');
+      if (myCard) {
+        const el = myCard.querySelector(`.track[data-track-id="${CSS.escape(id)}"]`);
+        if (el) el.remove();
+      }
+      updateSaveButtonsState();
+    }
+
+    function updateSaveButtonsState() {
+      // mark save buttons as saved if present in myPlaylist
+      const savedIds = new Set(myPlaylist.map(t => t.id.toString()));
+      document.querySelectorAll('.track').forEach(tr => {
+        const saveBtn = tr.querySelector('.save-btn');
+        if (!saveBtn) return;
+        const id = tr.dataset.trackId ? tr.dataset.trackId.toString() : '';
+        if (savedIds.has(id)) {
+          saveBtn.classList.add('saved');
+          saveBtn.title = 'Saved';
+          saveBtn.innerHTML = '<i class="ri-bookmark-fill"></i>';
+        } else {
+          saveBtn.classList.remove('saved');
+          saveBtn.title = 'Save to My Playlist';
+          saveBtn.innerHTML = '<i class="ri-bookmark-line"></i>';
+        }
+      });
+    }
+
+    // --- App Initialization & Events ---
+
+    // builds playlists grid: renders My Playlist then seeds asynchronously (shuffled)
     async function buildPlaylists() {
       playlistsEl.innerHTML = ''; // Clear view
 
-      // 1. Render your static playlist first (it's instant)
-      const myPlaylistCard = createPlaylistCard('My Playlist', myPlaylist);
+      // 1. Render static My Playlist first
+      const myPlaylistCard = createPlaylistCard('My Playlist', myPlaylist, { isMy: true });
       playlistsEl.appendChild(myPlaylistCard);
 
-      // 2. Loop through API-based playlists
+      // 2. Loop through API-based playlists, show placeholder then replace with fetched (shuffled)
       for (const [plName, artists] of Object.entries(seeds)) {
-        // Immediately show a placeholder card
-        const placeholder = createPlaceholderCard(plName);
-        playlistsEl.appendChild(placeholder);
+        const placeholder = (function (title) {
+          const card = document.createElement('div');
+          card.className = 'playlist-card';
+          card.innerHTML = `<h2>${escapeHtml(title)}</h2><div class="tracks" style="justify-content:center; align-items:center; min-height:150px;">
+            <p style="color:var(--muted);">Loading tracks...</p>
+          </div>`;
+          playlistsEl.appendChild(card);
+          return card;
+        })(plName);
 
-        // Asynchronously fetch and process data for this one playlist
         (async () => {
-          const promises = artists.map(a => fetchItunesFor(a, 25)); // Fetch more songs
+          const promises = artists.map(a => fetchItunesFor(a, 25));
           const results = (await Promise.all(promises)).flat();
 
           const unique = [];
@@ -350,15 +603,18 @@
             unique.push(r);
           }
 
-          const topTracks = unique.slice(0, 20); // Display more songs
+          // SHUFFLE here so songs render mixed and not album-by-album or artist-by-artist
+          shuffle(unique);
 
-          // Create the final card with data
+          const topTracks = unique.slice(0, 20);
+
           const finalCard = createPlaylistCard(plName, topTracks);
-
-          // Replace the placeholder with the final card
           placeholder.replaceWith(finalCard);
+          updateSaveButtonsState();
         })();
       }
+
+      updateSaveButtonsState();
     }
 
     async function handleSearch() {
@@ -369,8 +625,28 @@
       playlistsEl.innerHTML = '';
       const card = createPlaylistCard(`Search results for "${escapeHtml(q)}"`, results);
       playlistsEl.appendChild(card);
+      updateSaveButtonsState();
     }
 
+    // Delegated click handling (play + save)
+    playlistsEl.addEventListener('click', (ev) => {
+      // Play button
+      if (ev.target.closest('.play-btn')) {
+        handlePlayButtonClick(ev);
+        return;
+      }
+
+      // Save button
+      const saveBtn = ev.target.closest('.save-btn');
+      if (saveBtn) {
+        const trackDiv = saveBtn.closest('.track');
+        const trackData = extractTrackDataFromElement(trackDiv);
+        addToMyPlaylist(trackData, true);
+        updateSaveButtonsState();
+      }
+    });
+
+    // keyboard search
     searchBox.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') handleSearch();
     });
@@ -379,7 +655,9 @@
       searchBox.value = '';
       buildPlaylists();
     });
-    playlistsEl.addEventListener('click', handlePlayButtonClick);
+
+    // ensure updateSaveButtonsState also when playlists change (drag/drop, etc.)
+    playlistsEl.addEventListener('drop', () => setTimeout(updateSaveButtonsState, 50));
 
     // Initial build
     buildPlaylists();

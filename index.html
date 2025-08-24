@@ -1,44 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vibelist — Work with a vibe</title>
+
+  <!-- Remix icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="icon" href="img/vector-headphones-icon-symbol-sign.jpg" type="image/x-icon" />
-  <title>Vibelist - Work with vibe</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1> <i class="ri-music-ai-line"></i> Vibelist</h1>
-    </header>
-
-    <main>
-      <div class="content">
-        <p class="description">
-          Vibelist is a fun, frontend-only music experience I built for my own playlist collection. It's a simple way to
-          browse, explore, and enjoy tracks I love, without the hassle of digging through endless lists. You'll find a
-          mix of chill vibes, groovy tunes, and high-energy hits, all in one place.
-        </p>
-        <p class="description">
-          It's not connected to any streaming service, just a personal space to share the music I enjoy. Feel like
-          exploring? Click Explore and start the vibe.
-        </p>
-        <div class="cta-container">
-          <a href="main.html" class="explore-btn">
-            Explore <i class="ri-play-circle-line"></i>
-          </a>
+  <div class="page">
+    <!-- Header: brand left, small nav right -->
+    <header class="site-header" role="banner">
+      <div class="brand" aria-label="Vibelist">
+        <i class="ri-music-ai-line" aria-hidden="true"></i>
+        <div class="text">
+          <span class="name">Vibelist</span>
+          <span class="tag">Work with a vibe</span>
         </div>
       </div>
+
+      <nav class="top-nav" aria-label="Primary">
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link primary" href="main.html" title="Open Vibelist">Open App <i class="ri-play-mini-line" style="font-size:14px;"></i></a>
+      </nav>
+    </header>
+
+    <!-- Hero: left text, right artwork -->
+    <main role="main" style="width:100%; display:flex; justify-content:center;">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <div class="eyebrow">Welcome</div>
+          <h1 id="hero-title">A personal place for great music — simple, calm, meaningful.</h1>
+          <p class="lead">
+            Vibelist is a lightweight, frontend-first music playground for curating short previews and personal playlists.
+            Browse, save, and enjoy short preview clips — designed for clarity and ease, not affiliated with commercial streaming services.
+          </p>
+
+          <div class="cta" aria-hidden="false">
+            <a class="btn btn-explore" href="main.html" title="Explore Vibelist">Explore the App <i class="ri-play-circle-line"></i></a>
+            <a class="btn" style="color: whitesmoke;" href="about.html" title="Learn about project">Learn more</a>
+          </div>
+        </div>
+
+        <div class="art-wrap" aria-hidden="false">
+          <div class="art" role="img" aria-label="Vibelist artwork — icon and meta">
+            <div class="icon"><i class="ri-music-ai-line" aria-hidden="true"></i></div>
+            <div class="meta">Curated playlists • short previews (~30s) • demo & inspiration</div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <p>Made with <i class="ri-heart-3-fill"></i> and good vibes</p>
+    <!-- Important user note (legal / context) -->
+    <div class="note" role="note">
+      <strong>Note:</strong> Vibelist is a personal, frontend-only demo built for exploration and inspiration.
+      It uses public music APIs to fetch metadata and short preview clips (≈30 seconds). For full-length streaming
+      or commercial use, please use licensed services such as <a href="https://spotify.com" target="_blank" rel="noopener">Spotify</a>
+      or Apple Music. This project is Spotify-inspired and intended for personal / educational use only.
+    </div>
+
+    <footer class="site-foot" role="contentinfo">
+      <div>Made with <i class="ri-heart-3-fill" style="color:#ff9aa2"></i> and good vibes</div>
     </footer>
   </div>
 </body>
-
 </html>
