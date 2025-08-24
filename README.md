@@ -1,8 +1,8 @@
-# Vibelist — personal music playground
+# Vibelist 
 
 A focused, frontend-only app for browsing short music previews and curating a personal playlist. Built as a demo / learning project — not affiliated with the commercial streaming services.
 
-## Live demo
+### Live demo
 
 [https://myplaylist-beige.vercel.app/](https://myplaylist-beige.vercel.app/)
 
