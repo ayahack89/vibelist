@@ -34,7 +34,7 @@ This project only fetches metadata and short preview clips from public APIs. For
 
 ### Contact
 
-For development issues or collaboration: `ayanabhachatterjee@gmail.com`
+For development issues or collaboration: `ayanabha.c@aol.com`
 Mostly active on X: `@ayanabha08`
 
 
